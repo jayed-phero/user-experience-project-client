@@ -42,6 +42,9 @@ const ServiceDetails = () => {
                             </div>
                         </div>
                     </div>
+                    <div className='mt-5'>
+                        <button className='w-full py-3 rounded bg-green-500 hover:bg-green-700'>Add a Review</button>
+                    </div>
                 </div>
             </div>
         </div>

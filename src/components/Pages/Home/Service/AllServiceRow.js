@@ -7,9 +7,7 @@ const AllServiceRow = ({ service }) => {
         <div>
             <div class="flex justify-center pt-12">
                 <div class="max-w-sm  p-3 bg-transparent border-t-2 border-gray-500 hover:border-green-500">
-                    <a href="#!">
-                        <img className="rounded h-32 w-full " src={image} alt="" />
-                    </a>
+                    <img className="rounded h-32 w-full " src={image} alt="" />
                     <div class="px-3 pt-3">
                         <h5 class="text-2xl uppercase text-white font-medium mb-2">{title}</h5>
                         <p class="text-gray-500 text-base mb-2">

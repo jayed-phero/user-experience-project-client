@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const ServiceRow = ({ service }) => {
     const { image, _id, title, desc, rating } = service;
     return (
