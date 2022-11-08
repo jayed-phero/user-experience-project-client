@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServiceRow from './ServiceRow';
 
 const Service = () => {
@@ -29,6 +30,9 @@ const Service = () => {
                         service={service}
                         ></ServiceRow>)
                 }
+            </div>
+            <div className='text-center mt-12'>
+               <Link to='/allservices'><button className='bg-transparent border-2 border-green-500 hover:bg-green-500 duration-500 ease-in text-white font-semibold px-11 py-2 rounded-lg'>Show all</button></Link> 
             </div>
         </div>
     );
