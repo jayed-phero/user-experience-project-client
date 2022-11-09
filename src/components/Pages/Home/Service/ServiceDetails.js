@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../../Context/UserContext';
 
@@ -14,12 +15,16 @@ const ServiceDetails = () => {
         const review = form.review.value;
         const email = user.email;
         const name = user.displayName;
+        const photo = user.photoURL;
+        const title = title;
         const id = _id;
 
         const reviewInfo = {
             review,
             email,
             name,
+            photo,
+            title,
             id,
         }
 
@@ -35,6 +40,9 @@ const ServiceDetails = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            if(data.acknowledge){
+                toast.success('Review send successfully')
+            }
         })
         .catch(err => console.error(err))
 
@@ -55,7 +63,7 @@ const ServiceDetails = () => {
                                 <p class="text-white text-base mb-4">{desc}</p>
                                 <p class="text-white text-base mb-4">{desc}</p>
                             </div> */}
-                            <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+                            <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button> 
                         </div>
                     </div>
                 </div>
