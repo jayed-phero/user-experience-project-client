@@ -24,14 +24,14 @@ const Header = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Home</a></li>
-                            <li><a>Blogs</a></li>
+                            <Link className='hover:text-green-500' to='/'><li><a>Home</a></li></Link>
+                            <Link className='hover:text-green-500 ' to='/blog'><li><a>Blog</a></li></Link>
                             {
                                 user?.uid ?
                                     <>
-                                        <li><a>My Reviews</a></li>
-                                        <li><a>Add Service</a></li>
-                                        <li onClick={logoutUser}><a>Log Out</a></li>
+                                        <Link className='hover:text-green-500 ' to='/myreviews'><li><a>My Reviews</a></li></Link>
+                                        <Link className='hover:text-green-500 ' to='/addservice'><li><a>Add Service</a></li></Link>
+                                        <Link className='hover:text-green-500 '><li onClick={logoutUser}><a>Log Out</a></li></Link>
                                     </>
                                     :
                                     undefined
@@ -43,14 +43,14 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <Link to='/'><li><a>Home</a></li></Link>
-                        <Link to='/blog'><li><a>Blog</a></li></Link>
+                        <Link className='hover:text-green-500' to='/'><li><a>Home</a></li></Link>
+                        <Link className='hover:text-green-500 ' to='/blog'><li><a>Blog</a></li></Link>
                         {
                             user?.uid ?
                                 <>
-                                    <Link to='/myreviews'><li><a>My Reviews</a></li></Link>
-                                    <Link to='/addservice'><li><a>Add Service</a></li></Link>
-                                    <Link><li onClick={logoutUser}><a>Log Out</a></li></Link>
+                                    <Link className='hover:text-green-500 ' to='/myreviews'><li><a>My Reviews</a></li></Link>
+                                    <Link className='hover:text-green-500 ' to='/addservice'><li><a>Add Service</a></li></Link>
+                                    <Link className='hover:text-green-500 '><li onClick={logoutUser}><a>Log Out</a></li></Link>
                                 </>
                                 :
                                 undefined

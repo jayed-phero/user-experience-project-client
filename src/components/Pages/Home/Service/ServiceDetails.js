@@ -16,15 +16,15 @@ const ServiceDetails = () => {
         const email = user.email;
         const name = user.displayName;
         const photo = user.photoURL;
-        const title = title;
         const id = _id;
+        const headtitle = title;
 
         const reviewInfo = {
             review,
             email,
             name,
             photo,
-            title,
+            headtitle,
             id,
         }
 

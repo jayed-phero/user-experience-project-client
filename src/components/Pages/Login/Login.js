@@ -11,7 +11,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -25,8 +25,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user)
-            // navigate(from, {replace: true});
-            navigate('/')
+            navigate(from, {replace: true});
         })
         .catch(err => console.log(err))
         .finally(() => {
@@ -39,7 +38,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
-            // navigate(from, {replace: true});
+            navigate(from, {replace: true});
             toast.success("Welcome Login Successfully")
         })
         .catch(error => console.error(error))
@@ -50,7 +49,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user)
-            // navigate(from, {replace: true});
+            navigate(from, {replace: true});
             toast.success("Welcome Login Successfully")
         })
         .catch(error => console.error(error))
