@@ -1,7 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../Context/UserContext';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const logoutUser = () => {
+        logOut()
+            .then(() => {
+                toast.success("Successfully loged Out")
+                navigate('/')
+            })
+            .catch(e => console.error(e))
+    }
     return (
         <div className='z-50 px-52 sticky top-0 shadow-xl py-3 bg-black'>
             <div className="navbar text-lg text-white">
@@ -13,14 +26,36 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><a>Home</a></li>
                             <li><a>Blogs</a></li>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <li><a>My Reviews</a></li>
+                                        <li><a>Add Service</a></li>
+                                        <li onClick={logoutUser}><a>Log Out</a></li>
+                                    </>
+                                    :
+                                    undefined
+
+                            }
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li><a>Home</a></li>
-                        <li><a>Blogs</a></li>
+                        <Link to='/'><li><a>Home</a></li></Link>
+                        <Link to='/blog'><li><a>Blog</a></li></Link>
+                        {
+                            user?.uid ?
+                                <>
+                                    <Link to='/myreviews'><li><a>My Reviews</a></li></Link>
+                                    <Link to='/addservice'><li><a>Add Service</a></li></Link>
+                                    <Link><li onClick={logoutUser}><a>Log Out</a></li></Link>
+                                </>
+                                :
+                                undefined
+
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">

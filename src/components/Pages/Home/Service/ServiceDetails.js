@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../../Context/UserContext';
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData()
     const { title, image, _id, desc } = serviceDetails;
+    const { user } = useContext(AuthContext)
+
+
+    const handleReview = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const review = form.review.value;
+        const email = user.email;
+        const name = user.displayName;
+        const id = _id;
+
+        const reviewInfo = {
+            review,
+            email,
+            name,
+            id,
+        }
+
+        console.log(reviewInfo)
+
+    }
 
     return (
         <div className='md:px-52 bg-zinc-800'>
@@ -43,7 +65,25 @@ const ServiceDetails = () => {
                         </div>
                     </div>
                     <div className='mt-5'>
-                        <button className='w-full py-3 rounded bg-green-500 hover:bg-green-700'>Add a Review</button>
+                        {
+                            user?.uid ?
+
+                                <>
+                                    <form onSubmit={handleReview}>
+                                        <textarea name='review' type='text' className="textarea text-white bg-transparent textarea-accent h-32 w-full " placeholder="Type your Review"></textarea>
+                                        <button type='submit' className='w-full py-2 hover:bg-green-700 duration-300 ease-in bg-green-500 text-white rounded-lg mt-2'>Add Review</button>
+                                    </form>
+                                </>
+                                :
+                                <>
+                                    <div className='flex items-center justify-between'>
+                                        <h3 className='text-white text-xl font-semibold '>Please login to add a Review</h3>
+                                        <Link to='/login'>
+                                            <button className='px-3 py-2 rounded-lg text-white font-semibold bg-green-500 hover:bg-green-700'>Login</button>
+                                        </Link>
+                                    </div>
+                                </>
+                        }
                     </div>
                 </div>
             </div>
