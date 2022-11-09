@@ -30,15 +30,15 @@ const MyReview = () => {
             })
     }
 
-    const handleEdit = (id) => {
-        fetch(`http://localhost:5000/myreviews/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
-            // body:
-        })
-    }
+    // const handleEdit = (id) => {
+    //     fetch(`http://localhost:5000/myreviews/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         // body:
+    //     })
+    // }
 
     return (
         <div className='md:px-52 min-h-screen bg-zinc-800 py-16'>

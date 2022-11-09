@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../components/Main/Main";
 import Home from "../components/Pages/Home/Home/Home";
-import AddReview from "../components/Pages/Home/Review/AddReview";
+import EditReview from "../components/Pages/Home/Review/EditReview";
 import MyReview from "../components/Pages/Home/Review/MyReview";
+import AddService from "../components/Pages/Home/Service/AddService";
 import AllServices from "../components/Pages/Home/Service/AllServices";
 import Details from "../components/Pages/Home/Service/Details";
 import ServiceDetails from "../components/Pages/Home/Service/ServiceDetails";
@@ -41,12 +42,16 @@ const routes = createBrowserRouter([
                 element: <Signup></Signup>
             },
             {
-                path: 'addreview',
-                element: <AddReview></AddReview>
+                path: 'addservice',
+                element: <AddService></AddService>
             },
             {
                 path: 'myreviews',
                 element: <PrivateRoutes><MyReview></MyReview></PrivateRoutes>
+            },
+            {
+                path: '/editreview/:id',
+                element: <EditReview></EditReview>
             }
         ]
     }
