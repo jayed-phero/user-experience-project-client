@@ -4,7 +4,7 @@ import './Carousel.css';
 
 const Caurosel = () => {
     return (
-        <div className='md:px-52 min-h-screen bg-zinc-800 pt-7'>
+        <div className='px-5 md:px-52 min-h-screen bg-zinc-800 pt-7'>
             <div
                 id="carouselDarkVariant"
                 class="carousel slide carousel-fade carousel-dark relative"

@@ -20,7 +20,7 @@ const AllServices = () => {
 
     return (
         <PhotoProvider>
-            <div className='md:px-52 pt-16 pb-20 bg-zinc-800'>
+            <div className='px-5 md:px-52 pt-16 pb-20 bg-zinc-800'>
                 <div className='pb-9'>
                     <p className='text-green-500 font-bold text-5xl'>SERVICES</p>
                 </div>

@@ -1,5 +1,5 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/UserContext';
@@ -9,6 +9,7 @@ const Login = () => {
     useTitle('Login')
     const { user, loginUser, googleSignin, setLoading } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
+    const [error, setError] = useState('')
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -47,7 +48,10 @@ const Login = () => {
                     form.reset()
                 navigate(from, { replace: true });
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                setError(err.message)
+            })
             .finally(() => {
                 setLoading(false)
             })
@@ -78,12 +82,15 @@ const Login = () => {
                 navigate(from, { replace: true });
                 toast.success("Welcome Login Successfully")
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
 
     return (
-        <div className='md:px-52 py-20 bg-zinc-800 flex items-center justify-center'>
+        <div className='px-5 md:px-52 py-20 bg-zinc-800 flex items-center justify-center'>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent border-gray-500 border-2">
                 <div className="card-body ">
                     <h3 className='text-center py-2 text-3xl text-white'>Login Now</h3>
@@ -91,6 +98,7 @@ const Login = () => {
                         <p class="text-white text-sm font-semibold pt-1 mb-0"> Don't have an account?
                             <Link to='/signup' class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out" >Register</Link>
                         </p>
+                        <p className='text-sm font-semibold text-red-500'>{error}</p>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="form-control">

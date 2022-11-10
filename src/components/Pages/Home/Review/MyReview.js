@@ -50,7 +50,7 @@ const MyReview = () => {
     }
 
     return (
-        <div className='md:px-52 min-h-screen bg-zinc-800 py-16'>
+        <div className='px-5 md:px-52 min-h-screen bg-zinc-800 py-16'>
             <h3 className='text-5xl text-green-500 font-bold'>My Reviews</h3>
             {
                 myReviews?.length === 0 ?

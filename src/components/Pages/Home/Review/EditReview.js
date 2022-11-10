@@ -47,7 +47,7 @@ const EditReview = () => {
         // .catch(err => console.log(err))
     }
     return (
-        <div className='md:px-52 min-h-screen bg-zinc-800 py-16 '>
+        <div className='px-5 md:px-52 min-h-screen bg-zinc-800 py-16 '>
             <h3 className="font-bold text-lg text-center text-white">Type Your Update Review</h3>
             <div className='flex items-center pb-3 md:pl-96 pt-2'>
                 <img src={myReviewEdit.photo} className='h-9 w-9 rounded-full mr-3' />

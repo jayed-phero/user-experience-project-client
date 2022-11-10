@@ -45,7 +45,7 @@ const Signup = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='md:px-52 py-20 bg-zinc-800 flex items-center justify-center'>
+        <div className='px-5 md:px-52 py-20 bg-zinc-800 flex items-center justify-center'>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent border-gray-500 border-2">
                 <div className="card-body ">
                     <h3 className='text-center py-2 text-3xl text-white'>Sign Up</h3>
@@ -53,6 +53,7 @@ const Signup = () => {
                         <p class="text-white text-sm font-semibold pt-1 mb-0"> Already have an account?
                             <Link to='/login' class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out" >Login</Link>
                         </p>
+                        <p className='text-sm font-semibold text-red-500'>{error}</p>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="form-control">

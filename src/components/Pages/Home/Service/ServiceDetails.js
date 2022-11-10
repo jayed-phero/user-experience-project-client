@@ -10,8 +10,9 @@ const ServiceDetails = () => {
     useTitle('Service Details')
     const serviceDetails = useLoaderData()
     const [reviews, setReviews] = useState([])
+    const [error, setError] = useState('')
     const [refresh, setRefresh] = useState(false)
-    const { title, image, _id, desc } = serviceDetails;
+    const { title, image, _id, desc , price} = serviceDetails;
     const { user } = useContext(AuthContext)
 
 
@@ -54,7 +55,10 @@ const ServiceDetails = () => {
                 form.reset()
             }
         })
-        .catch(err => console.error(err))
+        .catch(err => {
+            console.error(err)
+            setError(err.message)
+        })
 
     }
 
@@ -68,7 +72,7 @@ const ServiceDetails = () => {
     }, [refresh])
 
     return (
-        <div className='md:px-52 bg-zinc-800 pb-20'>
+        <div className='px-5 md:px-52 bg-zinc-800 pb-20'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-11 pt-20'>
                 <div class="flex justify-center md:col-span-2">
                     <div class="rounded-lg w-full ">
@@ -78,8 +82,8 @@ const ServiceDetails = () => {
                         <div class="p-6">
                             <h5 class="text-white text-3xl font-medium mb-3">{title}</h5>
                             <p class="text-white text-base mb-4">{desc}</p>
-                            
-                            <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button> 
+                            <p className='text-white text-base mb-4'>{desc}</p>
+                            <p className='text-white text-xl font-semibold'>Price: $<span className='text-green-500'>{price}</span></p>
                         </div>
                     </div>
                 </div>
@@ -98,7 +102,8 @@ const ServiceDetails = () => {
                                 <>
                                     <form onSubmit={handleReview}>
                                         <h3 className='py-3 text-green-500 font-semibold'>Type Your Review here!!!</h3>
-                                        <textarea name='review' type='text' className="textarea text-white bg-transparent textarea-accent h-32 w-full " placeholder="Type your Review"></textarea>
+                                        <textarea name='review' type='text' className="textarea text-white bg-transparent textarea-accent h-32 w-full " placeholder="Type your Review" required></textarea>
+                                        <p className='text-sm font-semibold text-red-500'>{error}</p>
                                         <button type='submit' className='w-full py-2 hover:bg-green-700 duration-300 ease-in bg-green-500 text-white rounded-lg mt-2'>Add Review</button>
                                     </form>
                                 </>

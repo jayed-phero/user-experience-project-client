@@ -2,7 +2,7 @@ import React from 'react';
 
 const Features = () => {
     return (
-        <div className='md:px-52 min-h-screen bg-zinc-800 py-16'>
+        <div className='px-5 md:px-52 min-h-screen bg-zinc-800 py-16'>
             <section className="p-4 lg:p-8 bg-gray-800 text-gray-100">
                 <div className="container mx-auto space-y-12">
                     <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">

@@ -13,7 +13,7 @@ const Service = () => {
             })
     }, [])
     return (
-        <div className='md:px-52 pb-16'>
+        <div className='px-5 md:px-52 pb-16'>
             <div className='flex items-center justify-between mt-11'>
                 <h3 className='text-green-500 font-bold text-6xl'>MY SERVICES</h3>
                 <div className='text-center '>

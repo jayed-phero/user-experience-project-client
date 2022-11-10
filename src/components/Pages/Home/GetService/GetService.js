@@ -2,10 +2,10 @@ import React from 'react';
 
 const GetService = () => {
     return (
-        <div className='md:px-52 bg-zinc-800 py-16'>
+        <div className='px-5 md:px-52 bg-zinc-800 py-16'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-16'>
                 <div className=''>
-                    <h3 className='text-white uppercase font-bold text-5xl pb-11'>How To Get my Service</h3>
+                    <h3 className='text-white uppercase text-3xl font-bold md:text-5xl pb-11'>How To Get my Service</h3>
                     <p className='text-white '>Rather than letting your services go by, take these steps to keep your face in good shape until you can afford a full service.</p>
                 </div>
                 <div className='col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6'>

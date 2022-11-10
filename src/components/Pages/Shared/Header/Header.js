@@ -16,7 +16,7 @@ const Header = () => {
             .catch(e => console.error(e))
     }
     return (
-        <div className='z-50 px-52 sticky top-0 shadow-xl py-3 bg-black'>
+        <div className='z-50 px-5 md:px-52 sticky top-0 shadow-xl py-3 bg-black'>
             <div className="navbar text-lg text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -39,7 +39,7 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl"><i className="fa-regular fa-tooth"></i> DCARE</a>
+                    <a className="btn btn-ghost normal-case text-xl"><i className="fa-solid fa-tooth text-green-500 mr-2"></i> DCARE</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
