@@ -6,7 +6,6 @@ import EditReview from "../components/Pages/Home/Review/EditReview";
 import MyReview from "../components/Pages/Home/Review/MyReview";
 import AddService from "../components/Pages/Home/Service/AddService";
 import AllServices from "../components/Pages/Home/Service/AllServices";
-import Details from "../components/Pages/Home/Service/Details";
 import ServiceDetails from "../components/Pages/Home/Service/ServiceDetails";
 import Login from "../components/Pages/Login/Login";
 import Signup from "../components/Pages/Signup/Signup";
@@ -28,7 +27,7 @@ const routes = createBrowserRouter([
             {
                 path: '/servicedetails/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({ params }) => fetch(`https://review-assignment-eleven-server.vercel.app/services/${params.id}`),
             },
             {
                 path: 'login',
