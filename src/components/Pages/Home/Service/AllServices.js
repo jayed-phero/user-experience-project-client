@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PhotoProvider } from 'react-photo-view';
+import { AuthContext } from '../../../../Context/UserContext';
 import useTitle from '../../../../hooks/useTitle';
 import AllServiceRow from './AllServiceRow';
 
 const AllServices = () => {
+    const {loading, setLoading} = useContext(AuthContext)
      useTitle('Services')
     const [allservices, setAllServices] = useState([])
     useEffect(() => {
@@ -14,6 +16,7 @@ const AllServices = () => {
                 setAllServices(data)
             })
     }, [])
+
 
     return (
         <PhotoProvider>

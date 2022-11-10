@@ -28,15 +28,11 @@ const routes = createBrowserRouter([
             {
                 path: '/servicedetails/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
-            },
-            {
-                path: 'del',
-                element: <Details></Details>
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
             },
             {
                 path: 'login',
-                element: <Login></Login>
+                element: <PrivateRoutes><Login></Login></PrivateRoutes>
             },
             {
                 path: 'signup',
@@ -44,7 +40,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'addservice',
-                element: <AddService></AddService>
+                element: <PrivateRoutes> <AddService></AddService></PrivateRoutes>
             },
             {
                 path: 'myreviews',

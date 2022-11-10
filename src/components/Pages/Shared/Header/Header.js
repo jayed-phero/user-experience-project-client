@@ -39,7 +39,7 @@ const Header = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl"><i className="fa-regular fa-tooth"></i> DCARE</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -59,8 +59,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link className="bg-green-500 rounded-xl px-5 py-3 text-white ease-in duration-300 font-semibold hover:bg-transparent  border-2 border-green-500 mr-4">Signin</Link>
-                    <Link className="bg-green-500 rounded-xl px-5 py-3 text-white hover:bg-transparent border-2 border-green-500 ease-in duration-300 font-semibold">Sign up</Link>
+                    <h3 className='text-green-500 text-xl font-bold'>+880123457</h3>
                 </div>
             </div>
         </div>

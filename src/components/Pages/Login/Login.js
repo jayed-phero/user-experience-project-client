@@ -7,7 +7,7 @@ import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
     useTitle('Login')
-    const { user, loginUser, googleSignin, setLoading} = useContext(AuthContext)
+    const { user, loginUser, googleSignin, setLoading } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,47 +23,65 @@ const Login = () => {
         console.log(email, password)
 
         loginUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-            
-            const currentUser = {
-                email: user.email
-            }
+            .then(result => {
+                const user = result.user;
+                console.log(user)
 
-            // jwt token getting
-            fetch('http://localhost:5000/jwt', {
-                method: 'POST',
-                headers: {
-                    'content-type' : 'application/json'
-                },
-                body: JSON.stringify(currentUser)
+                const currentUser = {
+                    email: user.email
+                }
+
+                // jwt token getting
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('tokenDcare', data.token);
+                    })
+                    form.reset()
+                navigate(from, { replace: true });
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                localStorage.setItem('tokenDcare', data.token);
+            .catch(err => console.log(err))
+            .finally(() => {
+                setLoading(false)
             })
-            navigate(from, {replace: true});
-        })
-        .catch(err => console.log(err))
-        .finally(() => {
-            setLoading(false)
-        })
     }
 
     const handleGoogleSignin = () => {
         googleSignin(googleProvider)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            navigate(from, {replace: true});
-            toast.success("Welcome Login Successfully")
-        })
-        .catch(error => console.error(error))
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                const currentUser = {
+                    email: user.email
+                }
+
+                // jwt token getting
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('tokenDcare', data.token);
+                    })
+                navigate(from, { replace: true });
+                toast.success("Welcome Login Successfully")
+            })
+            .catch(error => console.error(error))
     }
 
-   
+
     return (
         <div className='md:px-52 py-20 bg-zinc-800 flex items-center justify-center'>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent border-gray-500 border-2">

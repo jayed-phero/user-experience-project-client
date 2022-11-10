@@ -21,7 +21,7 @@ const ServiceDetails = () => {
         const review = form.review.value;
         const email = user.email;
         const name = user.displayName;
-        const photo = user.photoURL;
+        const photo = user.photoURL
         const serviceImage = image;
         const id = _id;
         const headtitle = title;
@@ -51,6 +51,7 @@ const ServiceDetails = () => {
             if(data.acknowledged){
                 toast.success('Review send successfully')
                 setRefresh(!refresh)
+                form.reset()
             }
         })
         .catch(err => console.error(err))
