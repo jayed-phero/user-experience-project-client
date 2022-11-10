@@ -2,8 +2,11 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/UserContext';
+import useTitle from '../../../hooks/useTitle';
 
 const Signup = () => {
+
+    useTitle('Sign Up')
     const { createUser, updateUserProfile, googleSignin, githubLoginUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const [error, setError] = useState('')

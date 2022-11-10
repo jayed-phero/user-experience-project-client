@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const PageNotFound = () => {
+    useTitle('404 Page')
     return (
-        <div>
+        <div className='md:px-52'>
             <section className="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
                 <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
                     <div className="max-w-md text-center">

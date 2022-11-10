@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
+import useTitle from '../../../../hooks/useTitle';
 
 const EditReview = () => {
-
+      useTitle('Update Review')
     const router = useParams()
     const { id } = router;
 

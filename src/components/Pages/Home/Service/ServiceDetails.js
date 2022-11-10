@@ -2,9 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../../Context/UserContext';
+import useTitle from '../../../../hooks/useTitle';
 import ReviewLive from './ReviewLive';
 
 const ServiceDetails = () => {
+
+    useTitle('Service Details')
     const serviceDetails = useLoaderData()
     const [reviews, setReviews] = useState([])
     const [refresh, setRefresh] = useState(false)
@@ -19,6 +22,7 @@ const ServiceDetails = () => {
         const email = user.email;
         const name = user.displayName;
         const photo = user.photoURL;
+        const serviceImage = image;
         const id = _id;
         const headtitle = title;
 
@@ -27,6 +31,7 @@ const ServiceDetails = () => {
             email,
             name,
             photo,
+            serviceImage,
             headtitle,
             id,
         }
@@ -62,7 +67,7 @@ const ServiceDetails = () => {
     }, [refresh])
 
     return (
-        <div className='md:px-52 bg-zinc-800'>
+        <div className='md:px-52 bg-zinc-800 pb-20'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-11 pt-20'>
                 <div class="flex justify-center md:col-span-2">
                     <div class="rounded-lg w-full ">
@@ -91,6 +96,7 @@ const ServiceDetails = () => {
 
                                 <>
                                     <form onSubmit={handleReview}>
+                                        <h3 className='py-3 text-green-500 font-semibold'>Type Your Review here!!!</h3>
                                         <textarea name='review' type='text' className="textarea text-white bg-transparent textarea-accent h-32 w-full " placeholder="Type your Review"></textarea>
                                         <button type='submit' className='w-full py-2 hover:bg-green-700 duration-300 ease-in bg-green-500 text-white rounded-lg mt-2'>Add Review</button>
                                     </form>

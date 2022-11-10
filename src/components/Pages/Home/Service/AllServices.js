@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { PhotoProvider } from 'react-photo-view';
+import useTitle from '../../../../hooks/useTitle';
 import AllServiceRow from './AllServiceRow';
 
 const AllServices = () => {
-
+     useTitle('Services')
     const [allservices, setAllServices] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/allservices')

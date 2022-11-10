@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const MyReviewsRow = ({ reviews, handleDelete }) => {
     const navigate = useNavigate()
-    const { _id, photo, review, name, headtitle } = reviews;
+    const { _id, photo, serviceImage, review, name, headtitle } = reviews;
 
     // const handleUpdate = (e) => {
     //     e.preventDefault()
@@ -39,9 +39,12 @@ const MyReviewsRow = ({ reviews, handleDelete }) => {
     return (
         <div>
             <div className='p-7 w-full bg-zinc-900 rounded-xl'>
-                <div className='flex items-center pb-3'>
-                    <img src={photo} className='h-9 w-9 rounded-full mr-2' />
-                    <h3 className='text-xl font-semibold text-white'>{name}</h3>
+                <div className='flex items-center justify-between'>
+                    <div className='flex items-center pb-3'>
+                        <img src={photo} className='h-9 w-9 rounded-full mr-2' />
+                        <h3 className='text-xl font-semibold text-white'>{name}</h3>
+                    </div>
+                    <img className='h-9 w-20 rounded-lg' src={serviceImage}/>
                 </div>
                 <div className=''>
                     <h3 className='duration-300 ease-in border-b-2 border-gray-500 hover:border-green-500 pb-5 text-white'>{review}</h3>
