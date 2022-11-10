@@ -7,9 +7,8 @@ import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
     useTitle('Login')
-    const { user, loginUser, githubLoginUser, googleSignin, setLoading} = useContext(AuthContext)
-    const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GithubAuthProvider()
+    const { user, loginUser, googleSignin, setLoading} = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -27,6 +26,24 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user)
+            
+            const currentUser = {
+                email: user.email
+            }
+
+            // jwt token getting
+            fetch('http://localhost:5000/jwt', {
+                method: 'POST',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(currentUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                localStorage.setItem('tokenDcare', data.token);
+            })
             navigate(from, {replace: true});
         })
         .catch(err => console.log(err))
