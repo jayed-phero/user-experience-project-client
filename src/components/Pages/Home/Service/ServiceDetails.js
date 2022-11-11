@@ -16,6 +16,9 @@ const ServiceDetails = () => {
     const { title, image, _id, desc, price } = serviceDetails;
     const { user } = useContext(AuthContext)
 
+    const current = new Date();
+    const day = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+
 
     const handleReview = (event) => {
         event.preventDefault()
@@ -26,6 +29,7 @@ const ServiceDetails = () => {
         const photo = user.photoURL
         const serviceImage = image;
         const id = _id;
+        const date = day;
         const headtitle = title;
 
         const reviewInfo = {
@@ -35,6 +39,7 @@ const ServiceDetails = () => {
             photo,
             serviceImage,
             headtitle,
+            date,
             id,
         }
 
