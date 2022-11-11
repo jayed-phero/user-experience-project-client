@@ -4,7 +4,7 @@ import './Carousel.css';
 
 const Caurosel = () => {
     return (
-        <div className='px-5 md:px-52 min-h-screen bg-zinc-800 pt-7'>
+        <div className='px-5 md:px-52 bg-zinc-800 pt-7'>
             <div
                 id="carouselDarkVariant"
                 class="carousel slide carousel-fade carousel-dark relative"
@@ -43,8 +43,11 @@ const Caurosel = () => {
                             />
                         </div>
                         <div class="carousel-caption hidden md:block absolute text-center top-56">
-                            <h5 className="text-6xl text-green-500 font-semibold">Dental bonding is a technique</h5>
+                            <h5 className="text-6xl text-white uppercase font-semibold">Dental bonding is a technique</h5>
                             <p className='text-white'>Dental bonding is a technique used to correct imperfections with your teeth to give you a better-looking smile. Bonding is used to repair chipped teeth, decayed teeth, and cracked teeth.</p>
+                        </div>
+                        <div class="carousel-caption md:hidden absolute text-center top-16">
+                            <h5 className="text-3xl text-white font-semibold">Welcome to DCARE Dental</h5>
                         </div>
                     </div>
 
@@ -58,8 +61,11 @@ const Caurosel = () => {
                             />
                         </div>
                         <div class="carousel-caption hidden md:block absolute text-center top-56">
-                            <h5 className="text-6xl text-green-500 font-semibold">A dental bridge is a structure</h5>
+                            <h5 className="text-6xl text-white uppercase font-semibold">A dental bridge is a structure</h5>
                             <p className='text-white'>A dental bridge is a structure between two dental crowns to fill the gap between missing teeth. A bridge can be supported by your teeth, implants, or a combination of teeth and implants.</p>
+                        </div>
+                        <div class="carousel-caption md:hidden absolute text-center top-16">
+                            <h5 className="text-3xl text-white font-semibold">Welcome to DCARE Dental</h5>
                         </div>
                     </div>
 
@@ -73,8 +79,11 @@ const Caurosel = () => {
                             />
                         </div>
                         <div class="carousel-caption hidden md:block absolute text-center top-56">
-                            <h5 className="text-6xl font-semibold text-green-500">A dental crown is a dental prosthesis</h5>
+                            <h5 className="text-6xl font-semibold text-white uppercase">A dental crown is a dental prosthesis</h5>
                             <p className='text-white'>A dental crown is a dental prosthesis which replaces the visible part of a tooth. A dental crown functions to strengthen teeth, restore their original shape, and improve their appearance.</p>
+                        </div>
+                        <div class="carousel-caption md:hidden absolute text-center top-16">
+                            <h5 className="text-3xl text-white font-semibold">Welcome to DCARE Dental</h5>
                         </div>
                     </div>
                 </div>

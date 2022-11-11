@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import ScrollToTop from '../../../../hooks/Scrooling-top';
 import useTitle from '../../../../hooks/useTitle';
 
 const AddService = () => {
@@ -40,7 +41,8 @@ const AddService = () => {
             .catch(err => console.error(err))
     }
     return (
-        <div className='px-5 md:px-52 pt-11 min-h-screen bg-zinc-800 flex items-center justify-center'>
+        <div className='px-5 md:px-52 py-11 min-h-screen bg-zinc-800 flex items-center justify-center'>
+            <ScrollToTop></ScrollToTop>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent border-gray-500 border-2">
                 <div className="card-body ">
                     <h3 className='text-center py-2 text-3xl text-white'>Add Service</h3>

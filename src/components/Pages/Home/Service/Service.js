@@ -14,10 +14,10 @@ const Service = () => {
     }, [])
     return (
         <div className='px-5 md:px-52 pb-16'>
-            <div className='flex items-center justify-between mt-11'>
-                <h3 className='text-green-500 font-bold text-6xl'>MY SERVICES</h3>
+            <div className='flex items-center justify-between mt-16 md:mt-32'>
+                <h3 className='text-center md:text-left text-green-500 font-bold text-3xl md:text-6xl'>MY SERVICES</h3>
                 <div className='text-center '>
-                    <Link to='/allservices'><button className='bg-transparent border-2 border-green-500 hover:bg-green-500 duration-500 ease-in text-white font-semibold px-16 py-4 rounded-3xl hover:rounded-none'>Show all</button></Link>
+                    <Link to='/allservices'><button className='bg-transparent border-2 border-green-500 hover:bg-green-500 duration-500 ease-in text-white font-semibold px-5 py-3 md:px-16 md:py-4 rounded-3xl hover:rounded-none'>Show all</button></Link>
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>

@@ -31,7 +31,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'login',
-                element: <PrivateRoutes><Login></Login></PrivateRoutes>
+                element: <Login></Login>
             },
             {
                 path: 'signup',

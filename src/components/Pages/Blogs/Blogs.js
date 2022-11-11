@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollToTop from '../../../hooks/Scrooling-top';
 import useTitle from '../../../hooks/useTitle';
 
 
@@ -7,6 +8,7 @@ const Blogs = () => {
     useTitle('Blogs')
     return (
         <div className='px-5 md:px-52 bg-zinc-800'>
+            <ScrollToTop></ScrollToTop>
             <section className="bg-zinc-900 text-gray-100">
                 <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
                     <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">How it works</p>

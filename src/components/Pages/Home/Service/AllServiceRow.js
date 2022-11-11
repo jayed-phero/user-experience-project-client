@@ -4,7 +4,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 
 const AllServiceRow = ({ service }) => {
-    const { image, _id, title, desc, rating } = service;
+    const { image, _id, title, desc, rating, price } = service;
     return (
         <div>
             <div class="flex justify-center pt-12">
@@ -19,7 +19,7 @@ const AllServiceRow = ({ service }) => {
                         <p class="text-gray-500 text-base mb-2">
                             {desc.length > 100 ? desc.slice(0, 100) : desc}...
                         </p>
-                        <p className='pb-4'>Price : </p>
+                        <p className='text-white text-lg mb-7 font-semibold'>Visiting Fee: $ <span className='text-green-500'>{price}</span></p>
                         <Link to={`/servicedetails/${_id}`}>
                             <div className='flex items-center'>
                                 <p className='flex items-center hover:text-white justify-center h-6 w-6 bg-green-500 hover:bg-transparent border-2 border-green-500 duration-500 ease-in text-white rounded mr-3'><i class="fa-solid fa-angle-right"></i></p>

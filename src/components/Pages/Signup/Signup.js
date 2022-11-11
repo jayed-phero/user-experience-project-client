@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/UserContext';
+import ScrollToTop from '../../../hooks/Scrooling-top';
 import useTitle from '../../../hooks/useTitle';
 
 const Signup = () => {
@@ -45,7 +46,8 @@ const Signup = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='px-5 md:px-52 py-20 bg-zinc-800 flex items-center justify-center'>
+        <div className='px-5 md:px-52 py-7 md:py-20 bg-zinc-800 flex items-center justify-center'>
+            <ScrollToTop></ScrollToTop>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent border-gray-500 border-2">
                 <div className="card-body ">
                     <h3 className='text-center py-2 text-3xl text-white'>Sign Up</h3>
